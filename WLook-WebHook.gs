@@ -243,7 +243,7 @@ function getRandomPickupMessageList(category){
 
     var listNumberRandom = [];
 
-    var i = 4;
+    var i = 3;
 
     listNumberRandom.push( getRandomNumer(2, numRow) );
 
@@ -260,7 +260,14 @@ function getRandomPickupMessageList(category){
 
     }
 
-    var messageList = [];
+    var messageList = [
+        {
+            type: "text",
+            text: category,
+
+        }
+
+    ];
 
     listNumberRandom.forEach(function(item, index, array){
 
@@ -309,7 +316,7 @@ function replySubscriptions(replyToken, uid){
     var messageList = [
         {
             type: "template",
-            altText: "Dappei",
+            altText: "我的訂閱",
             template: {
                 type: "carousel",
                 columns: [
@@ -319,8 +326,8 @@ function replySubscriptions(replyToken, uid){
                         actions: [
                             {
                                 type: "message",
-                                label: subscriptions.indexOf("Dappei") ? "訂閱" : "取消訂閱",
-                                text: subscriptions.indexOf("Dappei") ? "subscript;Dappei": "unsubscript;Dappei"
+                                label: subscriptions.indexOf("Dappei") > -1 ? "取消訂閱" : "訂閱",
+                                text: subscriptions.indexOf("Dappei") > -1 ? "unsubscript;Dappei" : "subscript;Dappei"
                             }
                         ]
                     },
@@ -330,8 +337,8 @@ function replySubscriptions(replyToken, uid){
                         actions: [
                             {
                                 type: "message",
-                                label: subscriptions.indexOf("DropTokyo") ? "訂閱" : "取消訂閱",
-                                text: subscriptions.indexOf("DropTokyo") ? "subscript;DropTokyo": "unsubscript;DropTokyo"
+                                label: subscriptions.indexOf("DropTokyo") > -1 ? "取消訂閱" : "訂閱",
+                                text: subscriptions.indexOf("DropTokyo") > -1 ? "unsubscript;DropTokyo" : "subscript;DropTokyo"
                             }
                         ]
                     },
@@ -341,8 +348,8 @@ function replySubscriptions(replyToken, uid){
                         actions: [
                             {
                                 type: "message",
-                                label: subscriptions.indexOf("WearJP") ? "訂閱" : "取消訂閱",
-                                text: subscriptions.indexOf("WearJP") ? "subscript;WearJP": "unsubscript;WearJP"
+                                label: subscriptions.indexOf("WearJP") > -1 ?  "取消訂閱" : "訂閱",
+                                text: subscriptions.indexOf("WearJP") > -1 ? "unsubscript;WearJP" : "subscript;WearJP"
                             }
                         ]
                     }
