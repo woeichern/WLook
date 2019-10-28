@@ -263,7 +263,7 @@ function getRandomPickupMessageList(category){
     var messageList = [
         {
             type: "text",
-            text: category,
+            text: category
 
         }
 
